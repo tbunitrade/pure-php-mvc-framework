@@ -2,6 +2,7 @@
 /*
  * PDO Database Class
  * Connect to database
+ * Create prepared statements
  * Bind values
  * Return rows and results
  */
@@ -22,12 +23,12 @@ class Database {
         $dsn = 'mysql:host=' . $this->host  . ';dbname=' . $this->dbname;
         $options = array (
             PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION //silence warnings and exceptions
         );
 
-            //Create PDO instance
+        //Create PDO instance
         try {
-            $this->dbname = new PDO ($dsn, $this->user, $this->pass, $options);
+            $this->dbh = new PDO ($dsn, $this->user, $this->pass, $options);
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
             echo $this->error;
