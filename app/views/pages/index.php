@@ -1,12 +1,6 @@
 <?php require APPROOT .'/views/inc/header.php'; ?>
 <h1> <?= $data['post_title'];?></h1>
-<ul>
-    <?php foreach($data['posts'] as $post) : ?>
-    <li>
-        <?php echo $post->title ?>
-    </li>
-
-    <?php endforeach; ?>
-</ul>
-<?php echo APPROOT; ?>
+<p>
+    This is the Sonich MVC PhP Framework, please refer to the docs on how to use it
+</p>
 <?php require APPROOT .'/views/inc/footer.php'; ?>
